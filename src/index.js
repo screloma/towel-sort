@@ -8,10 +8,5 @@ module.exports = function towelSort(matrix) {
     if (matrix == undefined) {
         return [];
     }
-    return matrix
-        .map((x, index) => x.sort((a, b) => (index % 2 ? a + b : a - b)))
-        .flat();
-    return flatten(
-        matrix.map((x, index) => x.sort((a, b) => (index % 2 ? a + b : a - b)))
-    );
+    return flatten(matrix.map((x, index) => (index % 2 ? x.reverse() : x)));
 };
